@@ -8,25 +8,25 @@
 #                                                 /____/        
 #
 # Title of your website
-title: "Feeling Responsive"
+title: "Milo存档"
 
 
 # The slogan describes your website and is used on homepage in <title> and other important places
-slogan: "A Flexible Theme for Jekyll"
+slogan: ""
 
 
 # The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
-description: "»Feeling Responsive« is a responsive theme for Jekyll based on the fabulous foundation framework with beautiful typography and a bright color palette."
+description: ""
 
 
 # This URL is the main adresse. Don't include a slash at the end.
 #
-url: "https://phlow.github.io/feeling-responsive"
+url: ""
 baseurl: ""
 
 # This is for the editing function in _/includes/improve_content.html
 # Leave it empty if your site is not on GitHub/GitHub Pages
-improve_content: https://github.com/Phlow/feeling-responsive/edit/gh-pages
+improve_content: 
 
 # This URL points directly to the images directory making
 # things easier to link to images in posts and templates. It needs a slash.
@@ -34,7 +34,7 @@ improve_content: https://github.com/Phlow/feeling-responsive/edit/gh-pages
 # Example: <img src="{{ site.urlimg }}/{{ post.image.title }}">
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}/image.jpg)
 #
-urlimg: "http://phlow.github.io/feeling-responsive/images/"
+urlimg: "images/"
 
 
 # Logo size is 600x80 pixels
@@ -50,13 +50,15 @@ paginate_path: "blog/page:num"
 
 
 # Theme works best with Kramdown (using the table of contents function)
-markdown: kramdown
+markdown: redcarpet
 permalink: /:categories/:title/
 highlight: pygments
 excerpt_separator: "\n\n"
 exclude: []
 include: ['.htaccess']
 
+redcarpet:
+  extensions: [no_intra_emphasis]
 
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
@@ -67,6 +69,7 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+    - CNAME
 
 
 #

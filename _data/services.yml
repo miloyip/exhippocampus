@@ -1,9 +1,4 @@
-- menu_name: "Services"
-
-- name: "Contact"
-  url: "/contact/"
-  class: "services-contact"
-  title: "Contact"
+- menu_name: "服务"
 
 - name: "RSS"
   url: "/feed.xml"
