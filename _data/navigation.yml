@@ -6,18 +6,10 @@
   url: "/rapidjson"
   side: left
 
-#- title: "计算机图形学"
-#  url: "/graphics"
-#  side: left
-
 - title: "杂文"
   url: "/misc/"
   side: left
 
 - title: "简历"
   url: "/cv/"
-  side: right
-
-- title: "搜寻"
-  url: "/search/"
   side: right
