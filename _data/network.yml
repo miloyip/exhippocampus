@@ -2,5 +2,8 @@
 
 - name: "RapidJSON"
   url: "http://www.rapidjson.org/"
-  class: "sitemap-link"
   title: "RapidJSON"
+
+- name: "Milo的游戏开发"
+  url: "cnblogs.com/miloyip"
+  title: "Milo的游戏开发"
