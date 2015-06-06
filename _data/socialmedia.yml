@@ -1,3 +1,15 @@
+- name: Weibo
+  url: http://weibo.com/miloyip
+  class: icon-weibo
+
+- name: Zhihu
+  url: http://zhihu.com/people/miloyip
+  class: icon-zhihu
+
+- name: Bouban
+  url: http://www.douban.com/people/miloyip
+  class: icon-douban
+
 - name: Twitter
   url: http://twitter.com/miloyip
   class: icon-twitter

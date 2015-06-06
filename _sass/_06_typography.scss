@@ -369,6 +369,7 @@ mark {
 .icon-cloud:before,
 .icon-code:before,
 .icon-cog:before,
+.icon-douban:before,
 .icon-dropbox:before,
 .icon-edit:before,
 .icon-export:before,
@@ -405,20 +406,22 @@ mark {
 .icon-video:before,
 .icon-vimeo:before,
 .icon-warning:before,
+.icon-weibo:before,
 .icon-xing:before,
-.icon-youtube:before {
+.icon-youtube:before,
+.icon-zhihu:before {
   display: inline-block;
-font-family: "iconfont";
-font-style: normal;
-font-weight: normal;
-font-variant: normal;
-line-height: 1;
-text-decoration: inherit;
-text-rendering: optimizeLegibility;
-text-transform: none;
--moz-osx-font-smoothing: grayscale;
--webkit-font-smoothing: antialiased;
-font-smoothing: antialiased;
+  font-family: "iconfont";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 .icon-archive:before { content: "\f100"; }
@@ -437,6 +440,7 @@ font-smoothing: antialiased;
 .icon-cloud:before { content: "\f10c"; }
 .icon-code:before { content: "\f10d"; }
 .icon-cog:before { content: "\f10e"; }
+.icon-douban:before { content: "\f136"; }
 .icon-dropbox:before { content: "\f10f"; }
 .icon-edit:before { content: "\f110"; }
 .icon-export:before { content: "\f111"; }
@@ -473,5 +477,7 @@ font-smoothing: antialiased;
 .icon-video:before { content: "\f12f"; }
 .icon-vimeo:before { content: "\f130"; }
 .icon-warning:before { content: "\f131"; }
+.icon-weibo:before { content: "\f137"; }
 .icon-xing:before { content: "\f135"; }
 .icon-youtube:before { content: "\f132"; }
+.icon-zhihu:before { content: "\f138"; }

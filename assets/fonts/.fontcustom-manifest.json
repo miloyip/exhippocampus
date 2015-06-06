@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "c5cdc0a58b7277d1f320a4ad50aa8ae2ad47fa6ed879c164db1cfb75439bd1d9",
-    "current": "c5cdc0a58b7277d1f320a4ad50aa8ae2ad47fa6ed879c164db1cfb75439bd1d9"
+    "previous": "6bf3d178621919df1a249eea6b7e1b3c41c8ea0d927b7dd72fca63e19996d676",
+    "current": "6bf3d178621919df1a249eea6b7e1b3c41c8ea0d927b7dd72fca63e19996d676"
   },
   "fonts": [
     "./iconfont.ttf",
@@ -73,6 +73,10 @@
     "cog": {
       "codepoint": 61710,
       "source": "svg-files-for-custom-font/cog.svg"
+    },
+    "douban": {
+      "codepoint": 61750,
+      "source": "svg-files-for-custom-font/douban.svg"
     },
     "dropbox": {
       "codepoint": 61711,
@@ -218,6 +222,10 @@
       "codepoint": 61745,
       "source": "svg-files-for-custom-font/warning.svg"
     },
+    "weibo": {
+      "codepoint": 61751,
+      "source": "svg-files-for-custom-font/weibo.svg"
+    },
     "xing": {
       "codepoint": 61749,
       "source": "svg-files-for-custom-font/xing.svg"
@@ -225,6 +233,10 @@
     "youtube": {
       "codepoint": 61746,
       "source": "svg-files-for-custom-font/youtube.svg"
+    },
+    "zhihu": {
+      "codepoint": 61752,
+      "source": "svg-files-for-custom-font/zhihu.svg"
     }
   },
   "options": {
