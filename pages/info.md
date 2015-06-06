@@ -11,4 +11,4 @@ permalink: "/info/"
 
 [Hippocampus](http://en.wikipedia.org/wiki/Hippocampus)（[海马体](http://zh.wikipedia.org/wiki/%E6%B5%B7%E9%A9%AC%E4%BD%93)）是脑内一个像海马的部位，与脑部的长期记忆功能有密切作用，而"ex-"是指外部的意思。
 
-这个网站的源代码位于[此仓库](https://github.com/miloyip/miloyip.github.io)。
+这个网站的源代码位于[此仓库](https://github.com/miloyip/exhippocampus)。
