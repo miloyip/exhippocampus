@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "6bf3d178621919df1a249eea6b7e1b3c41c8ea0d927b7dd72fca63e19996d676",
-    "current": "6bf3d178621919df1a249eea6b7e1b3c41c8ea0d927b7dd72fca63e19996d676"
+    "previous": "5555562d684c691e057f2fd8868bbf28a0b7fed9be158c879930b5e673732cbc",
+    "current": "5555562d684c691e057f2fd8868bbf28a0b7fed9be158c879930b5e673732cbc"
   },
   "fonts": [
     "./iconfont.ttf",
@@ -117,6 +117,10 @@
     "heart-outlined": {
       "codepoint": 61720,
       "source": "svg-files-for-custom-font/heart-outlined.svg"
+    },
+    "hippocampus": {
+      "codepoint": 61753,
+      "source": "svg-files-for-custom-font/hippocampus.svg"
     },
     "home": {
       "codepoint": 61721,
