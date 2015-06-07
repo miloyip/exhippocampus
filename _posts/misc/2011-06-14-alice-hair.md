@@ -51,13 +51,13 @@ $$
 
 当中，$\mathbf{x}(t)$是时间在t时粒子的位置，$\Delta t$为时步（timestep），$d \in [0,1]$的阻尼系数，$\mathbf{a}(t)$为时间在$t$时作用于粒子的加速度（即当时作用于粒子的力除以其质量，例如引力加速度$[0, 0, -9.8]$）。Verlet方法分的计算简单，不需保留或计算速度（velocity），也比欧拉稳定，但缺点是时步（$\Delta t$）必须是固定的。
 
-Verlet积分的另一特点，是可以简单地加入各种约束（constraint），例如某粒子在仿真之后，其位置位于地面以下，只需把粒子移至最近地面的点。对于绳子，另一约束就是相邻粒子的距离，在Verlet积分下，此距离约束可以模拟弹簧。假设两个相邻粒子的位置为$x_1$、$x_2$，两者间的止动长度（rest length）为$L_r$，则可以这样调节两粒子的位置：
+Verlet积分的另一特点，是可以简单地加入各种约束（constraint），例如某粒子在仿真之后，其位置位于地面以下，只需把粒子移至最近地面的点。对于绳子，另一约束就是相邻粒子的距离，在Verlet积分下，此距离约束可以模拟弹簧。假设两个相邻粒子的位置为$\mathbf{x}_1$、$\mathbf{x}_2$，两者间的止动长度（rest length）为$l_r$，则可以这样调节两粒子的位置：
 
 <div>
 $$
 \begin{align}
-\mathbf{x}'_1 &= \mathbf{x}_1 - (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|} \\
-\mathbf{x}'_2 &= \mathbf{x}_2 + (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|}
+\mathbf{x}'_1 &= \mathbf{x}_1 + (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|} \\
+\mathbf{x}'_2 &= \mathbf{x}_2 - (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|}
 \end{align}
 $$
 </div>
