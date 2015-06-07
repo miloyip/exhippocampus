@@ -7,10 +7,9 @@ image:
     title: header_rapidjson_sse42.jpg
     caption: 2008 年发售的 Intel Core i7 芯片，它采用的 Nehalem 是第一个支持 SSE4.2 的微架构
     caption_url: http://www.intel.com/pressroom/archive/releases/2008/20081117comp_sm.htm
-teaser:
-    现在的 CPU 都提供了单指令流多数据流（single instruction multiple data, SIMD）指令集。最常见的是用于大量的浮点数计算，但其实也可以用在文字处理方面。其中，SSE4.2 包含了一些专为字符串而设的指令。我们通过使用这些指令，可以大幅提升某些 JSON 解析的性能。
 ---
 
+现在的 CPU 都提供了单指令流多数据流（single instruction multiple data, SIMD）指令集。最常见的是用于大量的浮点数计算，但其实也可以用在文字处理方面。其中，SSE4.2 包含了一些专为字符串而设的指令。我们通过使用这些指令，可以大幅提升某些 JSON 解析的性能。
 
 ## 跳过空白字符
 

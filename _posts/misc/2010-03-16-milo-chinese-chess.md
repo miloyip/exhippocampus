@@ -3,13 +3,14 @@ layout: page
 title: 12年前的作品──《美绿中国象棋》制作过程及算法简介
 categories:
     - misc
-teaser:
-    "这个游戏是大学本科二年级时（1998年）修人工智能课程的功课 。这个游戏的「棋力」并不高，主要是因为没有花时间在调整的工作上。比较满意的部分是使用 OpenGL 做的使用者介面。本文将简单介绍制作本游戏的过程及当中用到的算法。"
 header:
     image_fullwidth: chess.jpg
     caption: Photograph by Drolexandre
     caption_url: http://commons.wikimedia.org/wiki/File:Echecs_chinois.JPG
 ---
+
+这个游戏是大学本科二年级时（1998年）修人工智能课程的功课 。这个游戏的「棋力」并不高，主要是因为没有花时间在调整的工作上。比较满意的部分是使用 OpenGL 做的使用者介面。本文将简单介绍制作本游戏的过程及当中用到的算法。
+
 
 你可以先[下载](/downloads/mcchess.zip)（1049KiB）试试，但现时已找不到源码了，将来找到的话再分享。
 

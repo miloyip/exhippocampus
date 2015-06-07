@@ -8,9 +8,9 @@ image:
     thumb: header_rapidjson_stack_thumb.jpg
     caption: Image by Gozhanet
     caption_url: https://unsplash.com/gozhanet
-teaser:
-    大家好，这个专栏会分析 RapidJSON中一些有趣的 C++ 代码，希望对读者有所裨益。
 ---
+
+大家好，这个专栏会分析 RapidJSON中一些有趣的 C++ 代码，希望对读者有所裨益。
 
 ## C++ 语法解说
 

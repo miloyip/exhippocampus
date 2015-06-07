@@ -3,13 +3,14 @@ layout: page
 title: 我的游戏人生
 categories:
     - misc
-teaser:
-    我是在香港土生土长、现于上海工作的游戏程序员。有曰人生如戏，当代若说人生如游戏或更有共鸣。然而，我们是这游戏的玩家而不是设计师，世事往往并非各遂其愿，却又带来无尽惊喜。游戏中与其以赚取货币提升等级为目标，不如享受过程，尽兴而归。适逢其会，有缘和大家分享我的成长点滴。
 header:
     image_fullwidth: the_great_hall_view.jpg
     caption: Alice Madness Returns Screenshot (The Great Hall)
     caption_url: http://www.ea.com/alice/images/greathall
 ---
+
+我是在香港土生土长、现于上海工作的游戏程序员。有曰人生如戏，当代若说人生如游戏或更有共鸣。然而，我们是这游戏的玩家而不是设计师，世事往往并非各遂其愿，却又带来无尽惊喜。游戏中与其以赚取货币提升等级为目标，不如享受过程，尽兴而归。适逢其会，有缘和大家分享我的成长点滴。
+
 
 ## 童年玩意
 

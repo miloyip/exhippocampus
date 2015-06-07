@@ -5,7 +5,10 @@ categories:
     - misc
 ---
 
-在31年前(1979年)，一名刚获得博士学位的研究员，为了开发一个软件项目发明了一门新编程语言，该研究员名为[Bjarne Stroustrup](http://www2.research.att.com/~bs/)，该门语言则命名为——C with classes，四年后改称为C++。C++是一门通用编程语言，支持多种编程范式，包括过程式、面向对象（object-oriented programming, OOP）、泛型（generic programming, GP），后来为泛型而设计的模版，被[发现](http://www.erwin-unruh.de/meta.html)及[证明是图灵完备的](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=AA022F3026015EF910CAEF5156901019?doi=10.1.1.14.3670&rep=rep1&type=pdf)，因此使C++亦可支持[模版元编程范式（template metaprogramming, TMP）](http://en.wikipedia.org/wiki/Template_metaprogramming)。C++继承了C的特色，既为高级语言，又含低级语言功能，可同时作为系统和应用编程语言。
+在31年前(1979年)，一名刚获得博士学位的研究员，为了开发一个软件项目发明了一门新编程语言，该研究员名为[Bjarne Stroustrup](http://www2.research.att.com/~bs/)，该门语言则命名为——C with classes，四年后改称为C++。
+
+
+C++是一门通用编程语言，支持多种编程范式，包括过程式、面向对象（object-oriented programming, OOP）、泛型（generic programming, GP），后来为泛型而设计的模版，被[发现](http://www.erwin-unruh.de/meta.html)及[证明是图灵完备的](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=AA022F3026015EF910CAEF5156901019?doi=10.1.1.14.3670&rep=rep1&type=pdf)，因此使C++亦可支持[模版元编程范式（template metaprogramming, TMP）](http://en.wikipedia.org/wiki/Template_metaprogramming)。C++继承了C的特色，既为高级语言，又含低级语言功能，可同时作为系统和应用编程语言。
 
 C++广泛应用在不同领域，使用者[以数百万计](http://www2.research.att.com/~bs/bs_faq.html#number-of-C++-users)。根据[近十年的调查](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html)，C++的流行程度约稳定排行第3位(于C/Java之后)。 C++经历长期的实践和演化，才成为今日的样貌。1998年，C++标准委员会排除万难，使C++成为ISO标准(俗称C++98)，当中含非常强大的[标准模版库（standard template library, STL）](http://www.sgi.com/tech/stl/)。之后委员会在2005年提交了有关标准库的[第一个技术报告（简称TR1）](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1836.pdf)，并为下一个标准[C++0x](http://en.wikipedia.org/wiki/C%2B%2B0x)而努力。可惜C++0x并不能在200x年完成，各界希望新标准能于2011年内出台。
 

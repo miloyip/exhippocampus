@@ -3,15 +3,15 @@ layout: page
 title: 爱丽丝的发丝──《爱丽丝惊魂记：疯狂再临》制作点滴
 categories:
     - misc
-teaser:
-    "今天(2011年6月14日)是《爱丽丝惊魂记：疯狂再临 (Alice: Madness Returns) Xbox360/PlayStation3/PC》(下简称《爱》)正式发售日，身为其开发程序员之一，特撰此文以作纪念。"
 header:
     image_fullwidth: alice_hair09.jpg
 ---
 
+今天（2011年6月14日）是《爱丽丝惊魂记：疯狂再临 (Alice: Madness Returns) Xbox360/PlayStation3/PC》(下简称《爱》)正式发售日，身为其开发程序员之一，特撰此文以作纪念。
+
 ## 简介
 
-《爱》(图1a)是一款由上海独立游戏工作室[麻辣马（Spicy Horse）](http://www.spicyhorse.com/)制作、[美商电艺（Electronic Arts）](http://www.ea.com/)发行的惊悚动作冒险游戏。此全乃2000年发行的《爱丽丝惊魂记（American McGee’s Alice） PC》(图1b)的续作。
+《爱》（图1(a)）是一款由上海独立游戏工作室[麻辣马（Spicy Horse）](http://www.spicyhorse.com/)制作、[美商电艺（Electronic Arts）](http://www.ea.com/)发行的惊悚动作冒险游戏。此全乃2000年发行的《爱丽丝惊魂记（American McGee’s Alice） PC》(图1b)的续作。
 
 ![《Alice: Madness Returns》Xbox360封面](/images/alice_hair01.jpg)![《American McGee’s Alice》PC封面](/images/alice_hair06.png)
 
