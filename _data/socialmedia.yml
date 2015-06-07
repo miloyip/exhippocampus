@@ -6,7 +6,7 @@
   url: http://zhihu.com/people/miloyip
   class: icon-zhihu
 
-- name: Bouban
+- name: Douban
   url: http://www.douban.com/people/miloyip
   class: icon-douban
 
@@ -19,7 +19,7 @@
   class: icon-github
 
 - name: Linkedin
-  url: http://hk.linkedin.com/in/miloyip
+  url: http://www.linkedin.com/in/miloyip
   class: icon-linkedin
 
 - name: E-Mail
