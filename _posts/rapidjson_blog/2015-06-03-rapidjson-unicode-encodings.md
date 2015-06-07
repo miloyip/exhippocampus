@@ -180,7 +180,7 @@ struct Transcoder<Encoding, Encoding> {
 
 在 UTF-8 中，一个码点可能会编码为1至4个编码单元（字节）。它的解码比较复杂。RapidJSON 参考了 [Hoehrmann][Hoehrmann] 的实现，使用确定有限状态自动机（deterministic finite automation, DFA）的方式去解码。UTF-8的解码过程可以表示为以下的DFA:
 
-![](/images/utf8_dfa.png)
+![UTF-8 DFA](/images/utf8_dfa.png)
 
 当中，每个转移（transition）代表在输入流中遇到的编码单元（字节）范围。这幅图忽略了不合法的范围，它们都会转移至一个错误的状态。
 

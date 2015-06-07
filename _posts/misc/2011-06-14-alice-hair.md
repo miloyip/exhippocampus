@@ -13,7 +13,7 @@ header:
 
 《爱》(图1a)是一款由上海独立游戏工作室[麻辣马（Spicy Horse）](http://www.spicyhorse.com/)制作、[美商电艺（Electronic Arts）](http://www.ea.com/)发行的惊悚动作冒险游戏。此全乃2000年发行的《爱丽丝惊魂记（American McGee’s Alice） PC》(图1b)的续作。
 
-![](/images/alice_hair01.jpg)![](/images/alice_hair06.png)
+![《Alice: Madness Returns》Xbox360封面](/images/alice_hair01.jpg)![《American McGee’s Alice》PC封面](/images/alice_hair06.png)
 
 图1(a)《Alice: Madness Returns》Xbox360封面 (b)《American McGee’s Alice》PC封面
 
@@ -37,7 +37,7 @@ header:
 
 所谓弹簧质点系统，其实就是仿真一些有质量的粒子（质点），再在粒子之间加入一些无质量的虚拟弹簧。例如要模拟一条绳子，最简单的方法是建立n个粒子，再在每两个连续的粒子之间加入弹簧，即有n-1个弹簧，如图2。
 
-![](/images/alice_hair10.png)
+![用5个粒子和4个弹簧模拟的绳子](/images/alice_hair10.png)
 
 图2: 用5个粒子和4个弹簧模拟的绳子
 
@@ -103,7 +103,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 用程序产生一些发束，并把模疑结果用直线线段渲染出来，就做成图3的效果：
 
-![](/images/alice_hair04.jpg)
+![图3: 最初的头发实验](/images/alice_hair04.jpg)
 
 图3: 最初的头发实验
 
@@ -139,13 +139,13 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 为了使用较少的节点而得到圆滑的发束，我采用了均匀三次B样条（uniform cubic B-splines），把原来的发束插值为曲线（图4），之后才把该曲线展开为三角形表。插值的数量可以成为运行期动态LOD的参数。
 
-图4: 绿色线段为模拟结果，橙色为三次B样条
+![绿色线段为模拟结果，橙色为三次B样条](/images/alice_hair08.jpg)
 
-![](/images/alice_hair08.jpg)
+图4: 绿色线段为模拟结果，橙色为三次B样条
 
 至于着色方面，采用了较简单的Kajiya-Kay模型[3]。此模型基于切线（tangent）而非法线（normal），能表现出头发的高光（图5）。
 
-![](/images/alice_hair02.jpg)
+![早期基于Kajiya-Kay反射模型的着色](/images/alice_hair02.jpg)
 
 图5: 早期基于Kajiya-Kay反射模型的着色
 
@@ -153,7 +153,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 之前的做法，虽然能模拟出一条绳子，但它的行为更像一条锁链，因为它是完全柔软的，而真实的绳子在止动时通常是直线的，弯曲绳子需要施力。一个简单的实现方式是再加入弹簧（长度约束），连接相隔一个粒子的每对粒子（图6）。
 
-![](/images/alice_hair00.png)
+![加入防止弯曲的长度约束](/images/alice_hair00.png)
 
 图6: 加入防止弯曲的长度约束（红色）
 
@@ -161,9 +161,9 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 在碰撞方面，只是从一个球体扩展至多个球体，模拟更准确的头形，以及对脖子、胸、肩、手臂的碰撞。Verlet方法使碰撞计算简单之时又真实，可表现出发丝在肩上顺滑地流动。
 
-研发通常都不是一帆风顺的。当在程序中加入了移动模型的操控后，发现在少量迭代的情况下，发丝像弹簧般弹来弹去，换句话说，长度约束的收敛不够快。此问题是技术关键，当时没找到好的现成办法，苦恼多时。我试过不同的方法，例如把约束的执行乱序化，或是以不同分组方法进行长度约束，但效果都不如理想。最后灵机一触，想到既然碰撞这么简单、效果又好，可以想象每个节点都被限制在一个球体之内，球体中心为发根，半径则是发根至该节点的止动长度之和，如图7a所示。
+研发通常都不是一帆风顺的。当在程序中加入了移动模型的操控后，发现在少量迭代的情况下，发丝像弹簧般弹来弹去，换句话说，长度约束的收敛不够快。此问题是技术关键，当时没找到好的现成办法，苦恼多时。我试过不同的方法，例如把约束的执行乱序化，或是以不同分组方法进行长度约束，但效果都不如理想。最后灵机一触，想到既然碰撞这么简单、效果又好，可以想象每个节点都被限制在一个球体之内，球体中心为发根，半径则是发根至该节点的止动长度之和，如图7(a)所示。
 
-![](/images/alice_hair03.png)
+![球体约束](/images/alice_hair03.png)
 
 图7(a) 每个粒子限制在一个球体之内 (b) 不能满足长度约束的情形，但仍然保持每个节点和发根的直线距离
 
@@ -177,7 +177,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 因此，之后赶紧把代码移植至Xbox 360上测试（图8）。实验证明此技术的性能是可以的，瓶颈主要出现在特写镜头时的GPU填充率。
 
-![](/images/alice_hair09.jpg)
+![Xbox360上的测试截屏](/images/alice_hair09.jpg)
 
 图8: Xbox360上的测试截屏
 
@@ -201,7 +201,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 因为头发系统研发的成果，便希望爱丽丝的衣饰都能舍弃手工动画，采用程序式的动画。之前我们尝试过用现成的物理引擎的布料仿真，但效果不如理想。主要原因是，爱丽丝的裙子并不是轻薄柔滑的，而是里面有许多层布，形成一个较固定的形状。而且，设定中爱丽丝往下滑翔时，希望把裙子变成像降落伞的形状（图9）。
 
-![](/images/alice_hair05.jpg)
+![爱丽丝滑翔时，裙子变成像降落伞](/images/alice_hair05.jpg)
 
 图9: 爱丽丝滑翔时，裙子变成像降落伞（游戏截屏）
 
@@ -219,10 +219,10 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 希望日后能继续从技术方面，开拓游戏中的应用。最后也希望大家喜爱、享受《爱》这个游戏。
 
-![](/images/alice_hair07.jpg)
+![游戏截图](/images/alice_hair07.jpg)
 
 ## 参考
 
-[1] Thomas Jakobsen, “[Advanced Character Physics](http://www.gamasutra.com/gdcarchive/2001/jakobsent.doc)”, Game Developer Conference, 2001.
-[2] Hubert Nguyen, William Donnelly “[Hair Animation and Rendering in the Nalu Demo](http://www.cnblogs.com/http.developer.nvidia.com/GPUGems2/gpugems2_chapter23.html)”, GPU Gems 2, Addison-Wesley, 2005.
-[3] Thorsten Scheuermann, “[Hair Rendering and Shading](http://developer.amd.com/media/gpu_assets/Scheuermann_HairRendering.pdf)”, Game Developer Conference, 2004.
+[1] Thomas Jakobsen, "Advanced Character Physics", Game Developer Conference, 2001.
+[2] Hubert Nguyen, William Donnelly "Hair Animation and Rendering in the Nalu Demo", GPU Gems 2, Addison-Wesley, 2005.
+[3] Thorsten Scheuermann, "Hair Rendering and Shading", Game Developer Conference, 2004.

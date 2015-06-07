@@ -63,7 +63,7 @@ C++同时提供在堆栈上的自动局部变量，以及从自由存储（free 
 
 ### C++编译速度很慢?
 
-错，是非常慢。我认为C++可能是实用程序语言中编译速度最慢的。此问题涉及C++沿用C的编译链接方式，又加入了复杂的类/泛型声明和内联机制，使编译时间倍增。在C++对编译方法改革之前(如[module提案](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2073.pdf))，可使用以下技巧改善：第一，使用[pimpl手法](http://en.wikipedia.org/wiki/Opaque_pointer)，因性能损耗应用于调用次数不多的类；第二，仅包含必要头文件，并尽量使用及提供前置声明版本的头文件（如`iosfwd`）；第三采用基于接口的设计，但须注意虚函数调用成本；第四，采用[unity build](http://buffered.io/2007/12/10/the-magic-of-unity-builds/)，即把多个cpp文件结合在一个编译单元进行编译；第五，采用分布式生成系统如[IncrediBuild](http://www.xoreax.com/)。
+错，是非常慢。我认为C++可能是实用程序语言中编译速度最慢的。此问题涉及C++沿用C的编译链接方式，又加入了复杂的类/泛型声明和内联机制，使编译时间倍增。在C++对编译方法改革之前(如[module提案](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2073.pdf))，可使用以下技巧改善：第一，使用[pimpl手法](http://en.wikipedia.org/wiki/Opaque_pointer)，因性能损耗应用于调用次数不多的类；第二，仅包含必要头文件，并尽量使用及提供前置声明版本的头文件（如`iosfwd`）；第三采用基于接口的设计，但须注意虚函数调用成本；第四，采用[unity build](http://buffered.io/posts/the-magic-of-unity-builds/)，即把多个cpp文件结合在一个编译单元进行编译；第五，采用分布式生成系统如[IncrediBuild](http://www.xoreax.com/)。
 
 ### C++缺乏什么功能?
 

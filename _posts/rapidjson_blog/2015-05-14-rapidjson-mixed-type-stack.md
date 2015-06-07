@@ -178,4 +178,4 @@ public:
 [template disambiguator]: http://en.cppreference.com/w/cpp/language/dependent_name
 [stdstack]: http://en.cppreference.com/w/cpp/container/stack
 [stack.h]: https://github.com/miloyip/rapidjson/blob/v1.0.1/include/rapidjson/internal/stack.h
-[genericstringbuffer.h]: https://github.com/miloyip/rapidjson/blob/v1.0.1/include/rapidjson/stringbuffer.hgenericstringbuffer.h
+[genericstringbuffer.h]: https://github.com/miloyip/rapidjson/blob/v1.0.1/include/rapidjson/stringbuffer.h
