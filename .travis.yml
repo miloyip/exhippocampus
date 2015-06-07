@@ -1,13 +1,16 @@
 language: ruby
 
+rvm:
+  - 2.1
+
 script: 
   - bundle exec jekyll build
   - 'bundle exec htmlproof ./_site --href-ignore "#"'
 
 branches:
   only:
-  - gh-pages
+    - gh-pages
 
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
