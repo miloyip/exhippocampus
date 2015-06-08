@@ -13,9 +13,10 @@ header:
 
 《爱》（图1(a)）是一款由上海独立游戏工作室[麻辣马（Spicy Horse）](http://www.spicyhorse.com/)制作、[美商电艺（Electronic Arts）](http://www.ea.com/)发行的惊悚动作冒险游戏。此全乃2000年发行的《爱丽丝惊魂记（American McGee’s Alice） PC》(图1b)的续作。
 
-![《Alice: Madness Returns》Xbox360封面](/images/alice_hair01.jpg)![《American McGee’s Alice》PC封面](/images/alice_hair06.png)
-
-图1(a)《Alice: Madness Returns》Xbox360封面 (b)《American McGee’s Alice》PC封面
+|![《Alice: Madness Returns》Xbox360封面](/images/alice_hair01.jpg) | ![《American McGee’s Alice》PC封面](/images/alice_hair06.png) |
+|:---:|:---:|
+| (a)《Alice: Madness Returns》Xbox360封面 | (b)《American McGee’s Alice》PC封面 |
+图1：《爱丽丝惊魂记》两代封面
 
 在为期超过两年的制作期间，《爱》的制作团队最高达75人，另外有50人左右的美术外包团队。《爱》的制作团队有许多不同国籍的成员，但当中主要为华人。从制作地点及人员来说，《爱》可以说是一个国产游戏。但从目前的环境来说，《爱》应该不会在国内发行。
 
@@ -39,7 +40,7 @@ header:
 
 ![用5个粒子和4个弹簧模拟的绳子](/images/alice_hair10.png)
 
-图2: 用5个粒子和4个弹簧模拟的绳子
+图2：用5个粒子和4个弹簧模拟的绳子
 
 要模拟粒子运动，可使用《[用JavaScript玩转游戏物理（一）运动学模拟与粒子系统](http://www.cnblogs.com/miloyip/archive/2010/06/14/Kinematics_ParticleSystem.html)》一文中谈及的欧拉方法（Euler method），但[1]里介绍的Verlet数值积分在很多情况下是更好的选择。我使用了含简单阻尼效果的Verlet数值积分方程:
 
@@ -64,7 +65,7 @@ $$
 
 此外，要模拟头发，必须避免头发移动至头颅及其他身体部分之内，此仍碰撞检测（collision detection）和碰撞决议（collision resolution）。如前所述，这部分也可以用约束来表示。由于头颅较接近球体，在此简单测试中，只加入一个球体去进行检测。此约束把球体内的粒子推至最近的球面上。
 
-要同时满足多个约束，最简单的方法是松弛法（relaxation method），即进行多个迭代，每次执行所有约束一次，那么其结果就会就趋近合乎所有约束的解。当天写的测试程序，其数据结构和伪代码表示如下:
+要同时满足多个约束，最简单的方法是松弛法（relaxation method），即进行多个迭代，每次执行所有约束一次，那么其结果就会就趋近合乎所有约束的解。当天写的测试程序，其数据结构和伪代码表示如下：
 
 ~~~
 // 节点（粒子）
@@ -103,9 +104,9 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 用程序产生一些发束，并把模疑结果用直线线段渲染出来，就做成图3的效果：
 
-![图3: 最初的头发实验](/images/alice_hair04.jpg)
+![最初的头发实验](/images/alice_hair04.jpg)
 
-图3: 最初的头发实验
+图3：最初的头发实验
 
 程序中，能使用鼠标旋转头颅，表现暮然回首的飘逸；也可改变引力方向，表现风吹秀发的感觉。这个花了一天时间写的程序实验，其实并不复杂，至少比写这篇博文容易。
 
@@ -141,13 +142,13 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 ![绿色线段为模拟结果，橙色为三次B样条](/images/alice_hair08.jpg)
 
-图4: 绿色线段为模拟结果，橙色为三次B样条
+图4：绿色线段为模拟结果，橙色为三次B样条
 
-至于着色方面，采用了较简单的Kajiya-Kay模型[3]。此模型基于切线（tangent）而非法线（normal），能表现出头发的高光（图5）。
+至于着色方面，采用了较简单的 Kajiya-Kay 模型[3]。此模型基于切线（tangent）而非法线（normal），能表现出头发的高光（图5）。
 
-![早期基于Kajiya-Kay反射模型的着色](/images/alice_hair02.jpg)
+![早期基于 Kajiya-Kay 反射模型的着色](/images/alice_hair02.jpg)
 
-图5: 早期基于Kajiya-Kay反射模型的着色
+图5：早期基于 Kajiya-Kay 反射模型的着色
 
 ## 改进模拟
 
@@ -165,7 +166,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 ![球体约束](/images/alice_hair03.png)
 
-图7(a) 每个粒子限制在一个球体之内 (b) 不能满足长度约束的情形，但仍然保持每个节点和发根的直线距离
+图7：(a) 每个粒子限制在一个球体之内 (b) 不能满足长度约束的情形，但仍然保持每个节点和发根的直线距离
 
 此法能有效地避免头发超出半径范围，但不能控制如图7(b)的情况。从实验得知，后者其实不太显眼，只要不做成弹簧伸缩的感觉，视觉上很难察觉出问题。
 
@@ -179,7 +180,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 ![Xbox360上的测试截屏](/images/alice_hair09.jpg)
 
-图8: Xbox360上的测试截屏
+图8：Xbox360上的测试截屏
 
 除了效能，另一让我纠结的问题是发丝排序。使用半透明alpha混合（alpha blending）的渲染效果，比alpha测试（alpha testing）好得多。因为前者能表现出很柔滑的感觉，而后者则较粗糙。然而，实验里的排序是基于一个启发（heuristic）──按每根发束的第i个节点在观察空间（view space）的深度进行排序。当设i=0就是用发根来排序，以实验测试找出各种情况下较好的值。但以发束为单位的排序不能完美解决问题，只是一个折衷方案。
 
@@ -203,7 +204,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 
 ![爱丽丝滑翔时，裙子变成像降落伞](/images/alice_hair05.jpg)
 
-图9: 爱丽丝滑翔时，裙子变成像降落伞（游戏截屏）
+图9：爱丽丝滑翔时，裙子变成像降落伞（游戏截屏）
 
 我采用和头发相同的弹簧质点系统代码，来做实验模拟爱丽丝的裙子。不同之处在于那些长度约束的拓朴（topology），以及采用节点来驱动裙子骨架，用标准的蒙皮（skinning）方式渲染。
 
