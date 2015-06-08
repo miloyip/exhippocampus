@@ -1,0 +1,18 @@
+\documentclass[tikz,12pt]{standalone}
+\usetikzlibrary{arrows,angles,quotes}
+\begin{document}
+\begin{tikzpicture}[>=stealth]
+  \newcommand*{\Radius}{5cm}
+  \newcommand*{\Direction}{40}
+  \newcommand*{\Angle}{30}
+  \coordinate (A) at (\Direction - \Angle:\Radius);
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (\Direction + \Angle:\Radius);
+  \coordinate (U) at (\Direction:\Radius * 0.5);
+  \draw (O) node[anchor=north east] {$\mathbf{c}$};
+  \draw (A) -- (O) node[midway, anchor=north] {$r$} -- (B) pic [draw=blue!50!black, fill=blue!20, angle radius=\Radius] {angle = A--O--B};
+  \draw pic [draw=black, <->, angle radius=1.5cm, "$\theta$"] {angle = A--O--U};
+  \draw pic [draw=black, <->, angle radius=1.5cm, "$\theta$"] {angle = U--O--B};
+  \draw[->, very thick] (O) -- (U) node[anchor=south] {$\hat\mathbf{u}$}; 
+\end{tikzpicture}
+\end{document}
