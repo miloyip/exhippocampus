@@ -2,7 +2,7 @@
 layout: page
 title: 爱丽丝的发丝──《爱丽丝惊魂记：疯狂再临》制作点滴
 categories:
-    - misc
+    - graphics
 header:
     image_fullwidth: alice_hair09.jpg
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: 检测点是否在扇形之内
 categories:
-    - misc
+    - graphics
 header:
     image_fullwidth: header_fan.jpg
     caption: Photograph by Jim Wang

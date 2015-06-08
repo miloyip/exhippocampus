@@ -2,7 +2,7 @@
 layout: page
 title: 如何用C语言画一个心形
 categories:
-    - misc
+    - graphics
 ---
 
 ## 基础版
