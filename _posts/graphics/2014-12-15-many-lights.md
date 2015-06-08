@@ -56,19 +56,19 @@ Olsson、Billeter 及他们的导师 Ulf Assarsson 在2012年发表了一种新�
 
 [2] Wolfgang Engel. Designing a renderer for multiple lights–the light pre-pass renderer. ShaderX7: Advanced rendering techniques, 2009.
 
-[3] Rich Geldreich, Matt Pritchard, and John Brooks. Deferred lighting and shading. In Game Developers Conference, volume2, 2004. http://www.tenacioussoftware.com/gdc_2004_deferred_shading.ppt
+[3] Rich Geldreich, Matt Pritchard, and John Brooks. [Deferred lighting and shading](http://www.tenacioussoftware.com/gdc_2004_deferred_shading.ppt). In Game Developers Conference, volume2, 2004. 
 
-[4] Shawn Hargreaves and Mark Harris. Deferred shading. In Game Developers Conference, volume 2, 2004. http://www.shawnhargreaves.com/DeferredShading.pdf
+[4] Shawn Hargreaves and Mark Harris. [Deferred shading](http://www.shawnhargreaves.com/DeferredShading.pdf). In Game Developers Conference, volume 2, 2004. 
 
-[5] Ola Olsson and Ulf Assarsson. Tiled shading. Journal of Graphics, GPU, and Game Tools, 15(4):235–251, 2011. http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/Improved%20Ray%20Hierarchy%20Alias%20Free%20Shadows.pdf
+[5] Ola Olsson and Ulf Assarsson. [Tiled shading](http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/Improved%20Ray%20Hierarchy%20Alias%20Free%20Shadows.pdf). Journal of Graphics, GPU, and Game Tools, 15(4):235–251, 2011. 
 
-[6] Ola Olsson, Markus Billeter, and Ulf Assarsson. Clustered deferred and forward shading. In HPG ’12: Proceedings of the Conference on High Performance Graphics 2012, 2012. http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/clustered_shading_preprint.pdf
+[6] Ola Olsson, Markus Billeter, and Ulf Assarsson. [Clustered deferred and forward shading](http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/clustered_shading_preprint.pdf). In HPG ’12: Proceedings of the Conference on High Performance Graphics 2012, 2012.
 
-[7] Ola Olsson, Markus Billeter, and Ulf Assarsson. Tiled and clustered forward shading. In SIGGRAPH ’12: ACM SIGGRAPH 2012 Talks, New York, NY, US-
-A, 2012. ACM. http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/tiled_shading_siggraph_2012.pdf
+[7] Ola Olsson, Markus Billeter, and Ulf Assarsson. [Tiled and clustered forward shading](http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/tiled_shading_siggraph_2012.pdf). In SIGGRAPH ’12: ACM SIGGRAPH 2012 Talks, New York, NY, US-
+A, 2012. ACM.
 
 [8] Emil Persson and Ola Olsson. Practical clustered deferred and forward shading. SIGGRAPH Course: Advances in Real-Time Rendering in Games, 2013. http://www.cse.chalmers.se/ ~ olaolss/get_file.php?filename=papers/siggraph_2013.pdf
 
-[9] Tobias Ritschel, Thorsten Grosch, Min H Kim, H-P Seidel, Carsten Dachsbacher, and Jan Kautz. Imperfect shadow maps for efficient computation of indirect illumination. In ACM Transactions on Graphics (TOG), volume 27, page 129. ACM, 2008. http://people.mpi-inf.mpg.de/ ~ ritschel/Papers/ISM.pdf
+[9] Tobias Ritschel, Thorsten Grosch, Min H Kim, H-P Seidel, Carsten Dachsbacher, and Jan Kautz. [Imperfect shadow maps for efficient computation of indirect illumination](http://people.mpi-inf.mpg.de/~ritschel/Papers/ISM.pdf). In ACM Transactions on Graphics (TOG), volume 27, page 129. ACM, 2008. 
 
-[10] Yusuke Tokuyoshi. Virtual spherical gaussian lights for real-time glossy indirect illumination. In SIGGRAPH Asia 2014 Technical Briefs, page 17. ACM, 2014. http://www.jp.square-enix.com/info/library/pdf/Virtual%20Spherical%20Gaussian%20Lights%20for%20Real-Time%20Glossy%20Indirect%20Illumination.pdf
+[10] Yusuke Tokuyoshi. [Virtual spherical gaussian lights for real-time glossy indirect illumination](http://www.jp.square-enix.com/info/library/pdf/Virtual%20Spherical%20Gaussian%20Lights%20for%20Real-Time%20Glossy%20Indirect%20Illumination.pdf). In SIGGRAPH Asia 2014 Technical Briefs, page 17. ACM, 2014. 
