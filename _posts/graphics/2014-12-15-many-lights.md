@@ -67,7 +67,7 @@ Olsson、Billeter 及他们的导师 Ulf Assarsson 在2012年发表了一种新�
 [7] Ola Olsson, Markus Billeter, and Ulf Assarsson. [Tiled and clustered forward shading](http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/tiled_shading_siggraph_2012.pdf). In SIGGRAPH ’12: ACM SIGGRAPH 2012 Talks, New York, NY, US-
 A, 2012. ACM.
 
-[8] Emil Persson and Ola Olsson. Practical clustered deferred and forward shading. SIGGRAPH Course: Advances in Real-Time Rendering in Games, 2013. http://www.cse.chalmers.se/ ~ olaolss/get_file.php?filename=papers/siggraph_2013.pdf
+[8] Emil Persson and Ola Olsson. [Practical clustered deferred and forward shading](http://www.cse.chalmers.se/~olaolss/get_file.php?filename=papers/siggraph_2013.pdf). SIGGRAPH Course: Advances in Real-Time Rendering in Games, 2013. 
 
 [9] Tobias Ritschel, Thorsten Grosch, Min H Kim, H-P Seidel, Carsten Dachsbacher, and Jan Kautz. [Imperfect shadow maps for efficient computation of indirect illumination](http://people.mpi-inf.mpg.de/~ritschel/Papers/ISM.pdf). In ACM Transactions on Graphics (TOG), volume 27, page 129. ACM, 2008. 
 
