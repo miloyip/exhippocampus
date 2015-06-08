@@ -224,5 +224,7 @@ SimulateHair(nodes, strands, sphere, damping, dt, headToWorld)
 ## 参考
 
 [1] Thomas Jakobsen, "Advanced Character Physics", Game Developer Conference, 2001.
+
 [2] Hubert Nguyen, William Donnelly "Hair Animation and Rendering in the Nalu Demo", GPU Gems 2, Addison-Wesley, 2005.
+
 [3] Thorsten Scheuermann, "Hair Rendering and Shading", Game Developer Conference, 2004.
