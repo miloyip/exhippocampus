@@ -22,6 +22,7 @@ categories:
 本人在香港成长学习及工作，至2008年才赴内地游戏工作室工作，不黯内地的中文写作及用字习惯，翻译中曾遇到不少困难。有幸得到出版社人员以及良师益友的帮助，才能完成本译作。特别感谢[周筠](http://weibo.com/yeka52)老师支持本作的提案，并耐心地给予协助及鼓励。编辑[张春雨](http://www.cnblogs.com/208686914)老师和[卢鸫翔](http://weibo.com/lispython)老师，以及好友[余晟](http://www.luanxiang.org/)给予了大量翻译上的知识及指导。也感谢游戏业界专家[云风](http://codingnow.com/)、大宝和Dave给予了许多宝贵意见。此书的翻译及排版工作比预期更花时间，感谢妻子及儿女们的体谅。此次翻译工作历时三年半，因工作及家庭事宜导致严重延误，唯有在翻译及排版工作上更尽心尽力，希望求得等待此译作的读者们谅解。无论是批评或建议，诚希阁下通过电邮[miloyip@gmail.com](mailto:miloyip@gmail.com)、[新浪微博](http://weibo.com/miloyip/)、[豆瓣](http://www.douban.com/people/miloyip/)等渠道不吝赐教。
 
 叶劲峰（Milo Yip）
+
 2013年10月
 
 1.  原作者是顽皮狗（Naughty Dog）《神秘海域（Uncharted）》系列的通才程序员、《最后生还者（The Last of Us）》的首席程序员，之前还曾在EA和Midway工作。
