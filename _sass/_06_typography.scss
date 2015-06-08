@@ -228,14 +228,13 @@ article dl dd   { line-height: 1.6; margin-bottom: rem-calc(12); margin-left: re
 ------------------------------------------------------------------- */
 
 blockquote {
-    font-style: italic;
     position: relative;
     border: none;
     margin: 0 30px 30px 30px;
     color: #4b4b4d
 }
  
-    blockquote p {font-style: italic; color: $grey-10; }
+    blockquote p {color: $grey-10; }
  
     blockquote:before {
         display:block;content:"\00BB";
