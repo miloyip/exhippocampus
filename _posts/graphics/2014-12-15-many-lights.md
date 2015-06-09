@@ -6,7 +6,7 @@ categories:
 ---
 
 在 SIGGRAPH Asia 2014 中，《[高效地使用大量光源于实时着色（Efficient Real-TimeShading with Many Lights）](http://sa2014.siggraph.org/en/attendees/courses.html?view=session&type=courses&sessionid=36)》是和游戏技术最接近的课程之一。三位主讲分别是 Ola
-Olsson（瑞典查尔姆斯理工大学博士）、Emil Persson（Avalanche Studios研究部负责人）、Markus Billeter（瑞典查尔姆斯理工大学博士候选人）。课程内容讲比较前向、延迟、分块、群组和相关技术实现大量动态光源的渲染管道。由于现时未获演讲稿的电子版本，笔者尽量以记忆及相关文献简单介绍一下本课程的重点。
+Olsson（瑞典查尔姆斯理工大学博士）、Emil Persson（Avalanche Studios研究部负责人）、Markus Billeter（瑞典查尔姆斯理工大学博士候选人）。课程内容比较前向、延迟、分块、群组和相关技术实现大量动态光源的渲染管道。由于现时未获演讲稿的电子版本，笔者尽量以记忆及相关文献简单介绍一下本课程的重点。
 
 近年，实时渲染管道经历了一连串变革，全动态光源对这些变革有重要影响。传统的前向
 渲染（forward rendering）管道在渲染$n$个物体在$m$个光源下着色，需要绘制$\mathrm{O}(nm)$次。当需要越来越复杂的游戏场景，更多光源，这种方式成为CPU及GPU的性能瓶颈。在2004年 GDC 出现了延迟渲染（deferred rendering）管道的讨论[4]，所有物体都先绘制在一组屏幕空间的缓冲（称为几何缓冲区／G-buffer，见图1），再逐光源对该缓冲着色，复杂度变成$\mathrm{O}(n + m)$。另一种相关的技术在同一届 GDC 中发表，被称为延迟光照（deferred lighing）[3]，几年后也被称为前期光照通道（light pre-pass）[2]。通过这类“延迟”方式，已可以大量增加物体和光源的数量，渲染出更复杂的场景。然而，这种延迟方式有几个问题。首先，只能使用统一的材质着色器，而且其参数受限（每个参数需要相应的G-buffer），这对于游戏的画面风格造成很大的限制。第二，在性能上虽然复杂度降低了，但读写G-buffer的内存带宽用量成为了性能瓶颈。由于GPU的计算性能不断提升但显存带宽却提升缓慢，使延迟渲染越来越不适合近代的GPU。第三，不能处理半透明及多重采样抗锯齿（MultiSampling Anti-Aliasing, MSAA）。
@@ -28,7 +28,7 @@ Olsson（瑞典查尔姆斯理工大学博士）、Emil Persson（Avalanche Stud
 图2：分块渲染（图片来自 Olaolss 的[网页](http://www.cse.chalmers.se/~olaolss/main_frame.php?contents=publication&id=tiled_shading)）
 
 有趣的是，这种分块方式也可以用于前向渲染，这称为分块前向渲染（tiled forward
-rendering）[1]。当计算好光源列表，前向渲染时就按屏幕位置读取相关的光源信息去着色。那么，就可以同时解决延迟渲染的各种问题，又不需要像传统前向渲染对物体进行多次绘制。这种分块渲染似乎已经很理想，但如果增加更多光源，而场景又比较空扩，每个分块的光源数量就会变得更多。虽然做了深度范围的优化可缓解这个问题，但如果在视野里有很多深度不连续（depth discontinuities），如图3，那么该优化也不无能为力了。为了解决这个问题，研究者想
+rendering）[1]。当计算好光源列表，前向渲染时就按屏幕位置读取相关的光源信息去着色。那么，就可以同时解决延迟渲染的各种问题，又不需要像传统前向渲染对物体进行多次绘制。这种分块渲染似乎已经很理想，但如果增加更多光源，而场景又比较空扩，每个分块的光源数量就会变得更多。虽然做了深度范围的优化可缓解这个问题，但如果在视野里有很多深度不连续区域（depth discontinuities），如图3，那么该优化也无能为力了。为了解决这个问题，研究者想
 出了不同的新方法。
 
 |![渲染结果](/images/manylights_depthdiscon1.jpg) | ![深度不连续的区域](/images/manylights_depthdiscon2.jpg) |
@@ -52,12 +52,13 @@ Olsson、Billeter 及他们的导师 Ulf Assarsson 在2012年发表了一种新�
 |:---:|:---:|
 | (a) 缺省的指数深度分布 | (b) 特殊的近景深度分布 |
 
-图5：Avalanche工作室对群组深度分布的优化（图片来自[8]）
+图5：Avalanche 工作室对群组深度分布的优化（图片来自[8]）
 
 不过，在光照上还有一个未有完善解决的问题，就是阴影。笔者记得，以前在解决虚拟点
-光源模拟全局光照的阴影问题时，曾出现一种名为不完美阴影贴图（imperfect shadow map, ISM）的技术[9]。刚好在这课程的前一天 Square Enix 的德吉雄介也谈到使用ISM于他们的全局渲染管道中[10]。然而，本课程中Olsson就介绍了他和Billeter及其他同事合作发明的一个方案，
-称为虚拟阴影贴图（virtual shadow map），采用类似id Tech 5的虚拟纹理（virtual texturing）技术，去动态按阴影采样需求动态分配阴影贴图的纹理空间。其结果也是不错的，虽然使用了较大量的显存，但似乎在这一代游戏机平台上是有可能应用到的。
-最后Billeter讲述在移动平台上实现多光源的尝试，由于移动设备的内存带宽比PC的问题
+光源模拟全局光照的阴影问题时，曾出现一种名为不完美阴影贴图（imperfect shadow map, ISM）的技术[9]。刚好在这课程的前一天 Square Enix 的德吉雄介也谈到使用ISM于他们的全局渲染管道中[10]。然而，本课程中 Olsson 就介绍了他和 Billeter 及其他同事合作发明的一个方案，
+称为虚拟阴影贴图（virtual shadow map），采用类似 id Tech 5 的虚拟纹理（virtual texturing）技术，去动态按阴影采样需求动态分配阴影贴图的纹理空间。其结果也是不错的，虽然使用了较大量的显存，但似乎在这一代游戏机平台上是有可能应用到的。
+
+最后 Billeter 讲述在移动平台上实现多光源的尝试，由于移动设备的内存带宽比PC的问题
 更大，使用分块或群组渲染都更有竞争力。可望在近一两年内在高端手机游戏中实际应用。
 
 ## 参考文献
