@@ -684,4 +684,4 @@ union sms {
 
 如果读者也想到其他的解，或对上述解的改善，希望不吝告之，本人也会尽量整理于此。
 
-[下载源文件](downloads/idalloc20100903.zip)
+[下载源文件](/downloads/idalloc20100903.zip)
