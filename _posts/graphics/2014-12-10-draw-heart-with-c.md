@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 如何用C语言画一个心形
+title: 如何用 C 语言画一个心形
 categories:
     - graphics
 ---
