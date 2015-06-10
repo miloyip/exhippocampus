@@ -65,7 +65,7 @@ content），后者更可以生成一个大型的RPG地图及游戏性内容。�
 
 ![魔方世界](/images/voxel_cubeworld.jpg)
 
-图6：《魔方世界》完全以程序随机生成内容，让玩家可以不断探索无限的世界。整个游戏仅由一对夫妻制作。[官方預告片](https://www.youtube.com/watch?v=fuTT1TFgfoE)
+图5：《魔方世界》完全以程序随机生成内容，让玩家可以不断探索无限的世界。整个游戏仅由一对夫妻制作。[官方預告片](https://www.youtube.com/watch?v=fuTT1TFgfoE)
 
 ## 更细致的表现
 
