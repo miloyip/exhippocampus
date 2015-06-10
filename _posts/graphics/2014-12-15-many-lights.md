@@ -3,6 +3,10 @@ layout: page
 title: SIGGRAPH Asia 2014 见闻之《高效地使用大量光源于实时着色》课程
 categories:
     - graphics
+header:
+    image_fullwidth: manylights_header.jpg
+    caption: Photograph by Ryan Pouncy
+    caption_url: https://unsplash.com/pixelperfect
 ---
 
 在 SIGGRAPH Asia 2014 中，《[高效地使用大量光源于实时着色（Efficient Real-TimeShading with Many Lights）](http://sa2014.siggraph.org/en/attendees/courses.html?view=session&type=courses&sessionid=36)》是和游戏技术最接近的课程之一。三位主讲分别是 Ola
