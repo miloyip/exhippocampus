@@ -83,3 +83,5 @@ A, 2012. ACM.
 [9] Tobias Ritschel, Thorsten Grosch, Min H Kim, H-P Seidel, Carsten Dachsbacher, and Jan Kautz. [Imperfect shadow maps for efficient computation of indirect illumination](http://people.mpi-inf.mpg.de/~ritschel/Papers/ISM.pdf). In ACM Transactions on Graphics (TOG), volume 27, page 129. ACM, 2008. 
 
 [10] Yusuke Tokuyoshi. [Virtual spherical gaussian lights for real-time glossy indirect illumination](http://www.jp.square-enix.com/info/library/pdf/Virtual%20Spherical%20Gaussian%20Lights%20for%20Real-Time%20Glossy%20Indirect%20Illumination.pdf). In SIGGRAPH Asia 2014 Technical Briefs, page 17. ACM, 2014. 
+
+本文原于2014年12月15日在腾讯内部揭载，获授权公开。

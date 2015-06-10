@@ -177,3 +177,5 @@ bleeding）至天花。另外留意地面材质含有光泽反射。（此场景
 [9] Eric Stephen Lengyel. [Voxel-Based Terrain for Real-Time Virtual Simulations](http://www.terathon.com/lengyel/Lengyel-VoxelTerrain.pdf). PhD thesis, UNIVERSITY OF CALIFORNIA, 2010.
 
 [10] William E Lorensen and Harvey E Cline. [Marching cubes: A high resolution 3d surface construction algorithm](http://fab.cba.mit.edu/classes/S62.12/docs/Lorensen_marching_cubes.pdf). In ACM Siggraph Computer Graphics, volume 21, pages 163–169. ACM, 1987.
+
+本文原于2013年11月14日在腾讯内部揭载，获授权公开。
