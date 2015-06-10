@@ -90,11 +90,16 @@ format: blog-index
 
         <div class="medium-6 columns">
             <p>{{ site.data.language.more_articles }}</p>
-            {% include list-posts.html entries='3' offset='1' %}
+            {% include list-posts.html entries='5' offset='1' %}
         </div><!-- /.medium-7.columns -->
     </div><!-- /.row -->
 {% endunless %}
 
+    <div class="row t30 b20 homepage">
+        <div class="columns">
+            {% include qrcode.html %}
+        </div>
+</div>
 
 {% comment %}
 *

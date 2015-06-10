@@ -39,6 +39,10 @@ format: post
 			{{ content }}
 			</span>
 
+			<p>
+			{% include qrcode.html %}
+			</p>
+
 			{% if page.show_meta == true %}
 			{% include meta_information.html %}
 			{% endif %}
