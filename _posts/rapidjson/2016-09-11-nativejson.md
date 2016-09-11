@@ -56,7 +56,7 @@ image:
 
 ![Parse Time](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Time_(ms).png)
 
-前排是 RapidJSON、[gason](https://github.com/vivkin/gason)、[ujson4c](https://github.com/esnme/ujson4c)、[sajson](https://github.com/chadaustin/sajson)。然而，后三者的标准符合程度都较低。现时最快的 RapidJSON 以 7.9ms 解析 4.6MB 的 JSON 文本，比最后一名快 1100 倍以上。
+前排是 RapidJSON、[gason](https://github.com/vivkin/gason)、[ujson4c](https://github.com/esnme/ujson4c)、[sajson](https://github.com/chadaustin/sajson)。然而，后三者的标准符合程度都较低。现时最快的 RapidJSON 以 7.9ms 解析 4.6MB 的 JSON 文本，比最后一名快 140 倍以上。
 
 解析后的内存分配大小（越低越好）：
 
