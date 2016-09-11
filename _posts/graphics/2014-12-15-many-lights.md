@@ -9,7 +9,7 @@ header:
     caption_url: https://unsplash.com/pixelperfect
 ---
 
-在 SIGGRAPH Asia 2014 中，《[高效地使用大量光源于实时着色（Efficient Real-TimeShading with Many Lights）](http://sa2014.siggraph.org/en/attendees/courses.html?view=session&type=courses&sessionid=36)》是和游戏技术最接近的课程之一。三位主讲分别是 Ola Olsson（瑞典查尔姆斯理工大学博士）、Emil Persson（Avalanche Studios研究部负责人）、Markus Billeter（瑞典查尔姆斯理工大学博士候选人）。课程内容比较前向、延迟、分块、群组和相关技术实现大量动态光源的渲染管道。由于现时未获演讲稿的电子版本，笔者尽量以记忆及相关文献简单介绍一下本课程的重点。
+在 SIGGRAPH Asia 2014 中，《[高效地使用大量光源于实时着色（Efficient Real-TimeShading with Many Lights）](https://newq.net/publications/more/sa2014-many-lights-course)》是和游戏技术最接近的课程之一。三位主讲分别是 Ola Olsson（瑞典查尔姆斯理工大学博士）、Emil Persson（Avalanche Studios研究部负责人）、Markus Billeter（瑞典查尔姆斯理工大学博士候选人）。课程内容比较前向、延迟、分块、群组和相关技术实现大量动态光源的渲染管道。由于现时未获演讲稿的电子版本，笔者尽量以记忆及相关文献简单介绍一下本课程的重点。
 
 近年，实时渲染管道经历了一连串变革，全动态光源对这些变革有重要影响。传统的前向渲染（forward rendering）管道在渲染$n$个物体在$m$个光源下着色，需要绘制$\mathrm{O}(nm)$次。当需要越来越复杂的游戏场景，更多光源，这种方式成为CPU及GPU的性能瓶颈。在2004年 GDC 出现了延迟渲染（deferred rendering）管道的讨论[4]，所有物体都先绘制在一组屏幕空间的缓冲（称为几何缓冲区／G-buffer，见图1），再逐光源对该缓冲着色，复杂度变成$\mathrm{O}(n + m)$。另一种相关的技术在同一届 GDC 中发表，被称为延迟光照（deferred lighing）[3]，几年后也被称为前期光照通道（light pre-pass）[2]。通过这类“延迟”方式，已可以大量增加物体和光源的数量，渲染出更复杂的场景。然而，这种延迟方式有几个问题。首先，只能使用统一的材质着色器，而且其参数受限（每个参数需要相应的G-buffer），这对于游戏的画面风格造成很大的限制。第二，在性能上虽然复杂度降低了，但读写G-buffer的内存带宽用量成为了性能瓶颈。由于GPU的计算性能不断提升但显存带宽却提升缓慢，使延迟渲染越来越不适合近代的GPU。第三，不能处理半透明及多重采样抗锯齿（MultiSampling Anti-Aliasing, MSAA）。
 
