@@ -9,11 +9,12 @@ image:
     caption_url: https://unsplash.com/photos/kKLEgX-Z_O4
 ---
 
-在开发 RapidJSON 期间，我建立了另一开源项目 [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark)，至今已整合 41 个 C/C++ JSON 开源库，评测它们对标准符合程度以及性能。本文先谈一下评测结果，再谈这个项目的意义。
+在开发 [RapidJSON](https://github.com/miloyip/rapidjson) 期间，我建立了另一开源项目 [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark)，至今已整合 41 个 C/C++ JSON 开源库，评测它们对标准符合程度以及性能。本文先谈一下评测结果，再谈这个项目的意义。
 
 ## 评测方法
 
 标准符合程度（conformance）：
+
 1. 使用 [JSON_checker](http://www.json.org/JSON_checker/) 判断是否能分辨正确及错误的 JSON（parse validation）。
 2. 解析字符串类型 JSON，如正确结果比对（parse string）。
 3. 解析数字类型 JSON，如正确结果比对（parse double）。
@@ -22,6 +23,7 @@ image:
 有些库可能没有生成 JSON 的功能，那么就不能完成来回往返检测。
 
 性能检测：
+
 1. 解析 JSON 至 DOM（parse）。
 2. 把 DOM 转换至 JSON（stringify）。
 3. 美化转换（prettify）。
@@ -36,7 +38,7 @@ image:
 
 ## 结果
 
-以下是 2016 年 9 月 9 日，在 MacBook Pro (Retina, 15-inch, Mid 2015, Corei7-4980HQ@2.80GHz)、clang 7.0 64-bit 的执行结果。也可用[互动版本观看](https://rawgit.com/miloyip/nativejson-benchmark/master/sample/conformance.html)。
+以下是 2016 年 9 月 9 日，在 MacBook Pro (Retina, 15-inch, Mid 2015, Corei7-4980HQ 2.80GHz)、clang 7.0 64-bit 的执行结果。也可用[互动版本观看](https://rawgit.com/miloyip/nativejson-benchmark/master/sample/conformance.html)。
 
 综合标准符合程度（越高越好）：
 
@@ -44,9 +46,9 @@ image:
 
 目前只有 RapidJSON 的全精度版本及 [The Art of C++ / JSON](https://github.com/taocpp/json) (taocpp/json) 能获得 100% 完美得分。
 
-其实这个检测中，部分数字解析及相关的来回往返测试是过于严格的，超越了标准所需的程度。有大约 80%-90% 已经可以说完全符合标准。
+其实这个检测中，部分数字解析及相关的来回往返测试是过于严格的，超越了标准所需的程度。有大约 80%-90% 已经可以说完全符合标准。之后会调整检测，把一些不属于标准必须的部分仅作参考，不算进整体分数。
 
-有些库未能处理 '"\u0000"' 和代理对（surrogate pair）尚可接受，有些库连 `"\n"` 这类转义符都不处理，就有点太过分了。
+有些库未能处理 '"\u0000"' 和代理对（surrogate pair），尚可接受。有些库连 `"\n"` 这类转义符都不处理，就有点太过分了。
 
 另一个常见问题是，一个 JSON 值结束后只能含有 whitespace 字符，例如`[1, 2, 3] excited`就是不合法的。有些库没做这个检测。
 
@@ -54,13 +56,13 @@ image:
 
 ![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Time_(ms).png)
 
-前排是 RapidJSON、gason、ujson4c、sajson。然而，后三者的标准符合程度都较低。
+前排是 RapidJSON、[gason](https://github.com/vivkin/gason)、[ujson4c](https://github.com/esnme/ujson4c)、[sajson](https://github.com/chadaustin/sajson)。然而，后三者的标准符合程度都较低。
 
 解析后的内存分配大小（越低越好）：
 
 ![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Memory_(byte).png)
 
-Qt 未能成功检测其内存消耗，请忽略。RapidJSON 暂无对手，它在 x64 架构下的内存总消耗是 JSON 节点数量 ✕ 16 字节 + 长字符串字节大小。长字符串是指超过 13 个字节的字符串。之前发现了一个比 RapidJSON 更省的 [jbson](https://github.com/chrismanning/jbson)，但因为在 travis 上崩溃暂未加进评测。
+Qt 未能成功检测其内存消耗，请忽略。RapidJSON 暂无对手，它在 x64 架构下的内存总消耗是 (JSON 节点数量 ✕ 16 字节 + 长字符串字节大小)。长字符串是指超过 13 个字节的字符串。之前发现了一个比 RapidJSON 更省的 [jbson](https://github.com/chrismanning/jbson)，但因为在 travis 上崩溃暂未加进评测。
 
 Stringify 和 Prettify 时间（越低越好）：
 
@@ -72,7 +74,7 @@ Stringify 和 Prettify 时间（越低越好）：
 
 代码大小（越低越好）：
 
-![ ](performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_7._Code_size_FileSize_(byte).png)
+![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_7._Code_size_FileSize_(byte).png)
 
 由于要使用 V8 的 VM 来使用其 JSON 功能，所以执行文件特别大（静态链接）。较前排的 Folly、Qt、C++ REST SDK 都是使用动态链接的，所以特别小，其他的都是静态链接。而在静态链接库中，通常以 C 编写的较小，C++ 的较大。
 
@@ -123,7 +125,7 @@ void escapeString(
 
 ![ ](/images/folly_tojson_after.png)
 
-这个测试显示消耗时 1928ms ➔ 29ms，我已提供 issue 及 PR。
+这个测试显示消耗时 1928ms ➔ 29ms，我已提供 [issue](https://github.com/facebook/folly/issues/477) 及 [PR](https://github.com/facebook/folly/pull/478)。
 
 ## 后语
 
