@@ -50,15 +50,15 @@ paginate_path: "blog/page:num"
 
 
 # Theme works best with Kramdown (using the table of contents function)
-markdown: redcarpet
+markdown: kramdown
 permalink: /:year/:title/
 highlight: pygments
 excerpt_separator: "\n\n"
 exclude: []
 include: ['.htaccess']
 
-redcarpet:
-   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+# redcarpet:
+#    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
