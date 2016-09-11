@@ -20,7 +20,7 @@ header:
 
 在为期超过两年的制作期间，《爱》的制作团队最高达75人，另外有50人左右的美术外包团队。《爱》的制作团队有许多不同国籍的成员，但当中主要为华人。从制作地点及人员来说，《爱》可以说是一个国产游戏。但从目前的环境来说，《爱》应该不会在国内发行。
 
-《爱》使用[Unreal Engine 3](http://www.unrealengine.com/)开发，并使用了[Scaleform](http://www.scaleform.com/)、[Kynapse](http://usa.autodesk.com/adsk/servlet/pc/index?id=11390544&siteID=123112)和[Bink](http://www.radgametools.com/bnkmain.htm)中间件。在PC平台上，合作伙伴nVidia加入了使用GPU加速[PhysX](http://www.nvidia.com/object/physx_new.html)效果。但游戏主角爱丽丝的头发和衣饰模拟，并非使用PhysX，而是一个自定义解决方案，这也是本文将谈及的主要内容。
+《爱》使用[Unreal Engine 3](http://www.unrealengine.com/)开发，并使用了[Scaleform](http://www.autodesk.com/products/scaleform/overview)、[Kynapse](http://usa.autodesk.com/adsk/servlet/pc/index?id=11390544&siteID=123112)和[Bink](http://www.radgametools.com/bnkmain.htm)中间件。在PC平台上，合作伙伴nVidia加入了使用GPU加速[PhysX](http://www.nvidia.com/object/physx_new.html)效果。但游戏主角爱丽丝的头发和衣饰模拟，并非使用PhysX，而是一个自定义解决方案，这也是本文将谈及的主要内容。
 
 有时候，需求和技术，就像是鸡和蛋的关系──因某需求而开发新技术，或因某技术而产生新的需求。本人在《爱》的开发过程，清楚体会到这个关系。让我细细回想当天的事……
 

@@ -42,7 +42,7 @@ image:
 
 综合标准符合程度（越高越好）：
 
-![ ](/images/conformance_overall_Result.png)
+![Conformance Overall](/images/conformance_overall_Result.png)
 
 目前只有 RapidJSON 的全精度版本及 [The Art of C++ / JSON](https://github.com/taocpp/json) (taocpp/json) 能获得 100% 完美得分。
 
@@ -54,27 +54,27 @@ image:
 
 解析时间（越低越好）：
 
-![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Time_(ms).png)
+![Parse Time](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Time_(ms).png)
 
 前排是 RapidJSON、[gason](https://github.com/vivkin/gason)、[ujson4c](https://github.com/esnme/ujson4c)、[sajson](https://github.com/chadaustin/sajson)。然而，后三者的标准符合程度都较低。现时最快的 RapidJSON 以 7.9ms 解析 4.6MB 的 JSON 文本，比最后一名快 1100 倍以上。
 
 解析后的内存分配大小（越低越好）：
 
-![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Memory_(byte).png)
+![Parse Memory](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Memory_(byte).png)
 
 Qt 未能成功检测其内存消耗，请忽略。RapidJSON 暂无对手，它在 x64 架构下的内存总消耗是 (JSON 节点数量 ✕ 16 字节 + 长字符串字节大小)。长字符串是指超过 13 个字节的字符串。之前发现了一个比 RapidJSON 更省的 [jbson](https://github.com/chrismanning/jbson)，但因为在 travis 上崩溃暂未加进评测。
 
 Stringify 和 Prettify 时间（越低越好）：
 
-![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_2._Stringify_Time_(ms).png)
+![Stringify Time](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_2._Stringify_Time_(ms).png)
 
-![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_3._Prettify_Time_(ms).png)
+![Prettify Time](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_3._Prettify_Time_(ms).png)
 
 这两项都是 RapidJSON 完胜。这里有一个问题是测试的 JSON 数据中，最大的一个主要内容全为浮点数，而这类型的生成也是各类型中最耗时的，也许将来要再调整测试数据。
 
 代码大小（越低越好）：
 
-![ ](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_7._Code_size_FileSize_(byte).png)
+![Code Size](/images/performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_7._Code_size_FileSize_(byte).png)
 
 由于要使用 V8 的 VM 来使用其 JSON 功能，所以执行文件特别大（静态链接）。较前排的 Folly、Qt、C++ REST SDK 都是使用动态链接的，所以特别小，其他的都是静态链接。而在静态链接库中，通常以 C 编写的较小，C++ 的较大。
 
@@ -102,7 +102,7 @@ Stringify 和 Prettify 时间（越低越好）：
 
 另外，我之前整合遇到一些问题时，也会发 issue 查询讨论。例如，最近一轮的排查中，发现 [facebook/folly](https://github.com/facebook/folly) 的 `toJson()` 异常地慢：
 
-![ ](/images/folly_tojson_before.png)
+![toJson Before](/images/folly_tojson_before.png)
 
 经性能分析后，发现问题仅在于一行代码：
 
@@ -123,7 +123,7 @@ void escapeString(
 
 此行原来的意义，应该是希望预分配字符串的输出缓冲，避免过程中需要重新分配。但在一般的实现中，`std::string::reserve()` 在空间不足时，会把缓冲设置为指明的大小。由于每次的分配都是刚好够用而已，下次再输出字符串就必会再重新分配，造成 $O(n^2)$ 的性能瓶颈。而如果只是用 `std::string::push_back()`，它分配新空间会为现有大小的两倍（或其他倍数），达至分摊 $O(n)$ 的时间复杂度。所以，经过实验，只要删去该行，就能达到正常的性能：
 
-![ ](/images/folly_tojson_after.png)
+![toJson After](/images/folly_tojson_after.png)
 
 这个测试显示消耗时 1928ms ➔ 29ms，我已提供 [issue](https://github.com/facebook/folly/issues/477) 及 [PR](https://github.com/facebook/folly/pull/478)。
 
