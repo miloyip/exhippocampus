@@ -90,7 +90,7 @@ $$
 
 若直接实现以距离和点积的检测，可以得到:
 
-```cpp
+~~~cpp
 // Naive
 bool IsPointInCircularSector(
     float cx, float cy, float ux, float uy, float r, float theta,
@@ -117,7 +117,7 @@ bool IsPointInCircularSector(
     // acos(D dot U) < theta
     return acos(dx * ux + dy * uy) < theta;
 }
-```
+~~~
 
 ### 优化版本1：基本优化
 
@@ -152,7 +152,7 @@ $$
 
 基于这两个可能预计算的参数，可把检测函数的参数由 $r$ 和 $\theta$ 改成 $r^2$ 和 $\cos \theta$ 。结合这些改动：
 
-```cpp
+~~~cpp
 // Basic: use squareR and cosTheta as parameters, defer sqrt(), eliminate division
 bool IsPointInCircularSector1(
     float cx, float cy, float ux, float uy, float squaredR, float cosTheta,
@@ -178,7 +178,7 @@ bool IsPointInCircularSector1(
     // D dot U > |D| cos(theta)
     return dx * ux + dy * uy > length * cosTheta;
 }
-```
+~~~
 
 注意，虽然比较长度时不用开平方，在夹角的检测里还是要算一次开平方，但这也比必须算开平方好，因为第一个检测失败就不用算了。
 
@@ -205,7 +205,7 @@ $$
 
 解释一下，在第2个情况中，先把两侧分别乘以-1，大于就变成小于，两侧就变成非负，可以平方。在实现中，若非第1个或第2个情况，只可能是第3个或第4个，所以只需分辨是3还是4，例如只检测左侧是否负数。
 
-```cpp
+~~~cpp
 // Eliminate sqrt()
 bool IsPointInCircularSector2(
     float cx, float cy, float ux, float uy, float squaredR, float cosTheta,
@@ -241,7 +241,7 @@ bool IsPointInCircularSector2(
     else
         return DdotU >= 0;
 }
-```
+~~~
 
 ### 优化版本3：减少比较
 
@@ -251,7 +251,7 @@ bool IsPointInCircularSector2(
 
 而第3个情况也可以直接用符号作比较。
 
-```cpp
+~~~cpp
 // Bit trick
 bool IsPointInCircularSector3(
     float cx, float cy, float ux, float uy, float squaredR, float cosTheta,
@@ -299,7 +299,7 @@ bool IsPointInCircularSector3(
     else
         return asign == 0;
 }
-```
+~~~
 
 ## 性能测试
 
@@ -307,7 +307,7 @@ bool IsPointInCircularSector3(
 
 时间所限，我只做了一个简单的性能测试（欠缺足够边界条件单元测试……）：
 
-```cpp
+~~~cpp
 const unsigned N = 1000;
 const unsigned M = 100000;
 
@@ -329,13 +329,13 @@ float Test(TestFunc f, float rmax = 2.0f) {
     }
     return (float)count / (N * M);
 }
-```
+~~~
 
 我先用伪随机数生成一些测试数据，然后用两个循环共执行1亿次检测。这比较合乎游戏应用的情况，每次通常是检测`M`个角色是否在1个扇形之内，做`N`个迭代。
 
 使用 VS2010，缺省设置加上`/fp:fast`，Win32/Release的结果:
 
-```
+~~~
 NoOperation hit=0% time=0.376s
 IsPointInCircularSector hit=30.531% time=3.964s
 
@@ -343,7 +343,7 @@ NoOperation hit=0% time=0.364s
 IsPointInCircularSector1 hit=30.531% time=0.643s
 IsPointInCircularSector2 hit=30.531% time=0.614s
 IsPointInCircularSector3 hit=30.531% time=0.571s
-```
+~~~
 
 `NoOperation`是指测试的函数只简单传回`false`，用来检测函循环、读取测试数据和函数调用的开销。之后测的时间会减去这个开销。
 
@@ -351,7 +351,7 @@ IsPointInCircularSector3 hit=30.531% time=0.571s
 
 有趣的是，若打开`/arch:SSE2`
 
-```
+~~~
 NoOperation hit=0% time=0.453s
 IsPointInCircularSector hit=30.531% time=2.645s
 
@@ -359,7 +359,7 @@ NoOperation hit=0% time=0.401s
 IsPointInCircularSector1 hit=30.531% time=0.29s
 IsPointInCircularSector2 hit=30.531% time=0.32s
 IsPointInCircularSector3 hit=30.531% time=0.455s
-```
+~~~
 
 所有性能都提升了，但优化版本反而一直倒退。主要原因应该是SSE含`sqrtss`指令，能快速完成开平方运算，第2个和第3个版本所做的优化反而增加了指令及分支，而第3个版本更需要把SSE寄存器的值储存至普通寄在器做整数运算，造成更大损失。
 
@@ -367,7 +367,7 @@ IsPointInCircularSector3 hit=30.531% time=0.455s
 
 由于编译器自动化的SSE标量可以提高性，进一步的，可采用SOA（struct of array）布局进行以4组参数为单位的SIMD版本。使用了SSE/SSE2 intrinsic的实现，一个版本使用`_mm_sqrt_ps()`，一个版本去除了`_mm_sqrt_ps()`：
 
-```cpp
+~~~cpp
 // SSE2, SOA(struct of array) layout
 // SSE2, SOA(struct of array) layout
 __m128 IsPointInCircularSector4(
@@ -438,14 +438,14 @@ __m128 IsPointInCircularSector5(
 
     return result;
 }
-```
+~~~
 
 因为要以SIMD并行执行，不能分支。所有分支都要计算，然后再混合（blend）在一起。测试结果:
 
-```
+~~~
 IsPointInCircularSector4 hit=30.531% time=0.121s
 IsPointInCircularSector5 hit=30.531% time=0.177s
-```
+~~~
 
 SOA的好处是移植简单，基本上只要把`float`改成`__m128`，然后用相应的intrinsic代替浮点四则运算便可。而且能尽用每指令4个数据的吞吐量（throughput）。如果用`__m128`表示二维矢量（或其他问题中的三维矢量），许多时候会浪费了一些吞吐量（例如在点积运算上）。
 
