@@ -31,14 +31,12 @@ header:
 
 $\mathbf{p}$ 和 $\mathbf{c}$ 的距离小于 $r$，用数学方式表示：
 
-<div>
 $$
 \begin{equation}
 \lVert\mathbf{p} - \mathbf{c}\rVert < r
 \label{eq:distance}
 \end{equation}
 $$
-</div>
 
 ### 极坐标
 
@@ -46,18 +44,15 @@ $$
 
 有人想到，可以把 $\mathbf{p-c}$ 和 $\mathbf{\hat{u}}$ 从直角坐标转换成[极坐标](http://zh.wikipedia.org/wiki/%E6%9E%81%E5%9D%90%E6%A0%87)（polar coordinates）。数学上，$\mathbf{p-c}$ 和 $\mathbf{\hat{u}}$ 分别与 $\mathbf{x}$ 轴的夹角可用[`atan2()`](http://zh.wikipedia.org/wiki/Atan2)函数求得：
 
-<div>
 $$
 \begin{align*}
 \phi &= \mathrm{atan2}(p_y - c_y, p_x - c_x)\\
 \alpha &= \mathrm{atan2}(u_y, u_x)
 \end{align*}
 $$
-</div>
 
 然后，检查 $\phi$ 是否在 $(\alpha - \theta, \alpha + \theta)$ 区间内。但这要非常小心，因为 $(\alpha - \theta, \alpha + \theta)$ 区间可能超越 $(-\pi, \pi]$ 的范围，所以要检测：
 
-<div>
 $$
 \begin{align*}
 \alpha_1 &< \phi - 2\pi < \alpha_2 && \text{or}\\
@@ -65,7 +60,6 @@ $$
 \alpha_1 &< \phi + 2\pi < \alpha_2
 \end{align*}
 $$
-</div>
 
 这个方法是可行的，不过即使假设 $\mathbf{\hat{u}}$ 和 $\theta$ 是常数，可预计算 $\alpha_1$ 和 $\alpha_2$ ，我们还是避免不了要计算一个`atan2()`。
 
@@ -73,14 +67,12 @@ $$
 
 点积（dot product）可计算两个矢量的夹角，这非常适合本题的扇形表示方式。我们要检测 $\mathbf{p-c}$ 和 $\mathbf{\hat{u}}$ 的夹角是否小于 $\theta$：
 
-<div>
 $$
 \begin{equation}
 \cos^{-1}\left (\frac{\mathbf{p}-\mathbf{c}}{\lVert \mathbf{p}-\mathbf{c} \rVert} \cdot \mathbf{\hat{u}} \right ) < \theta
 \label{eq:withinanglerange}
 \end{equation}
 $$
-</div>
 
 相比极坐标的方法，点积算出来的夹角必然在 $[0, \pi]$ 区间里，无需作特别处理就可以和 $\theta$ 比较。
 
@@ -123,21 +115,17 @@ bool IsPointInCircularSector(
 
 由于计算矢量长度需要`sqrt()`，而不等式$(\ref{eq:distance})$左右两侧都是非负数，所以可以把两侧平方:
 
-<div>
 $$
 \lVert \mathbf{p} - \mathbf{c} \rVert^2 < r^2
 $$
-</div>
 
 如果 $r$ 为常数，我们可以预计算 $r^2$ 。
 
 另外，如果$\theta$是常数，我们可以预计算 $\cos \theta$ ，然后把不等式$(\ref{eq:withinanglerange})$ 改为：
 
-<div>
 $$
 \frac{\mathbf{p} - \mathbf{c}}{\lVert \mathbf{p} - \mathbf{c} \rVert} \cdot \mathbf{\hat{u}} > \cos \theta
 $$
-</div>
 
 可以这么做，是因为 $\cos \theta$ 在 $0 \le \theta \le \pi$ 的区间内是单调下降的。
 
@@ -188,11 +176,9 @@ bool IsPointInCircularSector1(
 
 这或许是这解答中最难的问题。我们不能简单地把不等式$(\ref{eq:optimization1})$两侧平方:
 
-<div>
 $$
 ((\mathbf{p}-\mathbf{c}) \cdot \mathbf{\hat{u}})^2 > {\lVert\mathbf{p}-\mathbf{c} \rVert}^2 \cos^2 \theta \qquad \textrm{Wrong!}
 $$
-</div>
 
 因为两侧分别有可能是正数或负数。若把负数的一侧平方后，就会把负号清除了，我们必须把比较符号反转。
 

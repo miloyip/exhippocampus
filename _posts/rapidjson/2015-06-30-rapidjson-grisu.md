@@ -122,14 +122,12 @@ while (kappa > 0) {
 
 顺便一提，当整数模除运算（modulo operation）与除法成对出现时，而操作数相同，那么编译器会把模除运算生成一个乘法及减法：
 
-<div>
 $$
 \begin{align*}
 c &= \left\lfloor a \mathbin{/} b \right\rfloor \\
 r &= a - b \cdot c
 \end{align*}
 $$
-</div>
 
 这一节没有使用 intrinsic 或其他底层优化，只是手动把除法用另一个方式表达，就能达到有效的性能提升。
 

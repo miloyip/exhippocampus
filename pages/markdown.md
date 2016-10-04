@@ -37,12 +37,9 @@ x &= -b \pm \frac{\sqrt{\Delta}}{2a}
 \end{align}
 $$.
 
-<div>
 $$
 \begin{align}
 \mathbf{x}'_1 &= \mathbf{x}_1 - (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|} \\
 \mathbf{x}'_2 &= \mathbf{x}_2 + (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|}
 \end{align}
 $$
-</div>
-

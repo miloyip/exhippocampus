@@ -54,14 +54,12 @@ $$
 
 Verlet积分的另一特点，是可以简单地加入各种约束（constraint），例如某粒子在仿真之后，其位置位于地面以下，只需把粒子移至最近地面的点。对于绳子，另一约束就是相邻粒子的距离，在Verlet积分下，此距离约束可以模拟弹簧。假设两个相邻粒子的位置为$\mathbf{x}_1$、$\mathbf{x}_2$，两者间的止动长度（rest length）为$l_r$，则可以这样调节两粒子的位置：
 
-<div>
 $$
 \begin{align}
 \mathbf{x}'_1 &= \mathbf{x}_1 + (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|} \\
 \mathbf{x}'_2 &= \mathbf{x}_2 - (\mathbf{x}_2 - \mathbf{x}_1) \cdot \frac{\left \| \mathbf{x}_2 - \mathbf{x}_1 \right \| - l_r}{2 \left \| \mathbf{x}_2 - \mathbf{x}_1 \right \|}
 \end{align}
 $$
-</div>
 
 此外，要模拟头发，必须避免头发移动至头颅及其他身体部分之内，此仍碰撞检测（collision detection）和碰撞决议（collision resolution）。如前所述，这部分也可以用约束来表示。由于头颅较接近球体，在此简单测试中，只加入一个球体去进行检测。此约束把球体内的粒子推至最近的球面上。
 

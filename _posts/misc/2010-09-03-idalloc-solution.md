@@ -13,19 +13,15 @@ categories:
 
 设$m = 256$为所有 id 的个数，集合$U = \left\\{ 0, 1, \ldots, m-1 \right\\}$为所有id的集合。那么，给定一个已分配id的集合$A\subset U$，$A = \left\\{ a_0, a_1, \ldots, a_{n-1} \right\\}$（即参数`ids`），本题目可表示为，求一个$x$（即传回的id），符合条件：
 
-<div>
 $$
 x \in U \setminus A
 $$
-</div>
 
 $\setminus$是补集的意思，即$x$属于$U$但不属于$A$。上回的对答已确定$U \setminus A\ne \oslash$ ，即$x$必然存在。此外，这个条件又可以写成：
 
-<div>
 $$
 (x \in U) \wedge (x \notin A)
 $$
-</div>
 
 以上两种表达式可说明此问题的两种解法，一种编程方向是查找U集里有没有不属于A的id，而另种是计算A的补集再取出其中一个id。
 
@@ -317,7 +313,6 @@ byte partition_stl(byte* ids, size_t n) {
 
 也许，最多网友都想到的解，就是把`ids`无序数组变换为另一个集合表示方式，能更快地测试A是否不含某id。这种表达方式是使用一个布尔数组（boolean array），储存某id是否在ids无序数组里。用数学方式，可以称这个数组为一个函数$f:U\rightarrow \{0,1\}$：
 
-<div>
 $$
 f(i)=\left\{
 	\begin{matrix}
@@ -326,7 +321,6 @@ f(i)=\left\{
 	\end{matrix}
 \right.
 $$
-</div>
 
 建立这个数组之后，再扫描一次，找出没使用到的 id。
 

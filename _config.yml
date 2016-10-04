@@ -60,6 +60,9 @@ include: ['.htaccess']
 # redcarpet:
 #    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
+kramdown:
+  input: GFM
+
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
 
