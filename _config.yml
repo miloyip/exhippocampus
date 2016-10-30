@@ -8,7 +8,7 @@
 #                                                 /____/        
 #
 # Title of your website
-title: "Milo的ex-Hippocampus"
+title: "Xiang Fulin"
 
 
 # The slogan describes your website and is used on homepage in <title> and other important places
@@ -21,7 +21,7 @@ description: ""
 
 # This URL is the main adresse. Don't include a slash at the end.
 #
-url: "http://miloyip.com"
+url: "http://127.0.0.1:4000"
 baseurl: ""
 
 # This is for the editing function in _/includes/improve_content.html
@@ -93,7 +93,7 @@ defaults:
       show_meta: true 	# Show metadata beneath all pages
       # sidebar:    		# Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: "your_author_name"
+      author: "shawn"
   -
     scope:
       path: ""        
@@ -102,7 +102,7 @@ defaults:
       show_meta: true   # Show metadata beneath all posts
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: true
-      author: "your_author_name"
+      author: "shawn"
 
 
 
