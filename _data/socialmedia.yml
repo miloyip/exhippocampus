@@ -1,27 +1,21 @@
-- name: Weibo
-  url: http://weibo.com/miloyip
-  class: icon-weibo
-
 - name: Zhihu
-  url: http://zhihu.com/people/miloyip
+  url: https://www.zhihu.com/people/shawnpa-pa
   class: icon-zhihu
 
 - name: Douban
-  url: http://www.douban.com/people/miloyip
+  url: http://www.douban.com/
   class: icon-douban
 
-- name: Twitter
-  url: http://twitter.com/miloyip
-  class: icon-twitter
+
 
 - name: GitHub
-  url: http://github.com/miloyip
+  url: http://github.com/xiangfulin
   class: icon-github
 
 - name: Linkedin
-  url: http://www.linkedin.com/in/miloyip
+  url: http://www.linkedin.com/
   class: icon-linkedin
 
 - name: E-Mail
-  url: mailto:miloyip@gmail.com
+  url: fl_xiang@126.com
   class: icon-mail
