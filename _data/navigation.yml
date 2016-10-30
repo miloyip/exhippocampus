@@ -2,16 +2,14 @@
   url: "/"
   side: left
 
-- title: "RapidJSON"
-  url: "/rapidjson/"
+
+
+- title: "历史"
+  url: "/history/"
   side: left
 
-- title: "计算机图形学"
-  url: "/graphics/"
-  side: left
-
-- title: "杂文"
-  url: "/misc/"
+- title: "前端"
+  url: "/frontend/"
   side: left
 
 - title: "简历"
