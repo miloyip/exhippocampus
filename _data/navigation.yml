@@ -8,15 +8,9 @@
   url: "/history/"
   side: left
 
-- title: "web基础"
-  url: "/hcj/"
-  side: left
-
-- title: "前端乱炖"
+- title: "前端"
   url: "/frontend/"
   side: left
-
-
 
 - title: "简历"
   url: "/cv/"
