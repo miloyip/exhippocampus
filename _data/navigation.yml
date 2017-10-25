@@ -4,14 +4,19 @@
 
 
 
-- title: "历史"
-  url: "/history/"
+
+
+- title: "区块链"
+  url: "/blockchain/"
   side: left
 
 - title: "前端"
   url: "/frontend/"
   side: left
 
+- title: "历史"
+  url: "/history/"
+  side: left 
 - title: "简历"
   url: "/cv/"
   side: right
