@@ -1,9 +1,9 @@
 - menu_name: "相关网站"
 
-- name: "RapidJSON"
-  url: "http://rapidjson.org/"
-  title: "RapidJSON"
+- name: "巴比特"
+  url: "http://8btc.org/"
+  title: "巴比特"
 
-- name: "Milo的游戏开发"
-  url: "http://www.cnblogs.com/miloyip"
-  title: "Milo的游戏开发"
+- name: "英语学习"
+  url: "http://youtube.com"
+  title: "英语学习"

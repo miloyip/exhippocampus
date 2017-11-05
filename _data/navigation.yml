@@ -2,18 +2,24 @@
   url: "/"
   side: left
 
-- title: "RapidJSON"
-  url: "/rapidjson/"
+
+
+
+- title: "产品经理"
+  url: "/pm/"
   side: left
 
-- title: "计算机图形学"
-  url: "/graphics/"
+- title: "区块链"
+  url: "/blockchain/"
   side: left
 
-- title: "杂文"
-  url: "/misc/"
+- title: "前端"
+  url: "/frontend/"
   side: left
 
+- title: "历史"
+  url: "/history/"
+  side: left 
 - title: "简历"
   url: "/cv/"
   side: right
